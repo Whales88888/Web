@@ -1,144 +1,89 @@
-
+/* === Base (Mobile-first) === */
 body {
-    background-color: #dedede;
-}
-
-h1 {
-    text-align: center;
-    font-family:Arial, sans-serif;
-    font-size: 32px;
-}
-
-a {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #fff;
     color: #000;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
-}
-
-p {
-   font-size: 25px;
-   font-family:Arial, sans-serif;
-}
-
-img{
-  width:100%;
-}
-
-
-p{
-  text-align:center;
-}
-
-div img{
-    width:150px;
-    height: 150px;
-    display:block;
-    margin:auto;
-}
-
-div{
-  display: inline-block;
-  width: 24%;
-  margin: 5px;
-  padding: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-main {
-    border: 5px #000 solid;
-    margin: 10px;
-}
- */
-/* 
-
-.container {
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  .gallery {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
-}
- */
-/* img{
-    width: 200px;
-    height: 200px;
-    padding: 5px;
-} */
-
-/* .child {
-    position: relative;
-    display: inline-block;
-    border: 5px black solid;
-    margin: 5px;
-    border-radius: 5px;
-} */
-
-/* 
-
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.button {
-    display: inline-block;
-    border: 2px solid #000;
-    padding: 5px;
-    border-radius: 25px;
-}
- */
-/* 
-.button:hover {
-    background-color:#fff;
-} */
-
-/* 
-footer {
-    display: flex;
-    justify-content: center;
-} */
-
-/* 
-header {
-    border-radius: 5px;
-    border: 5px #000 solid;
-    margin: 10px;
-} */
-
-/* 
-.label {
-    display: none;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-} */
-/* 
-.child:hover .label {
+    gap: 10px;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    text-align: center;
+  }
+  
+  figure img {
+    max-width: 100%;
+    height: auto;
     display: block;
-} */
+    margin: 0 auto 1rem;
+  }
+  
+  figcaption {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* === Tablet view (min-width: 772px) === */
+  @media (min-width: 772px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    figure {
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  
+    .gallery figure:last-child {
+      grid-column: span 2;
+    }
+  }
+  
+  /* === Large screen view (min-width: 992px) === */
+  @media (min-width: 992px) {
+    figure {
+      border-radius: 0;
+    }
+  
+    .gallery figure:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+  
+  /* === prefers-reduced-motion === */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* === Dark mode === */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #f0e68c;
+    }
+  
+    figure {
+      background-color: #333;
+      border-color: black;
+      color: #f0e68c;
+    }
+  }
+  
